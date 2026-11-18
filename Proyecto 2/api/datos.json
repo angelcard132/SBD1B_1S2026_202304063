@@ -1,0 +1,108 @@
+{
+  "DEPARTAMENTO": [
+    { "NOMBRE": "Guatemala", "CODIGO": 1 },
+    { "NOMBRE": "Sacatepéquez", "CODIGO": 3 },
+    { "NOMBRE": "Escuintla", "CODIGO": 5 }
+  ],
+  "MUNICIPIO": [
+    { "NOMBRE": "Guatemala", "CODIGO": 1, "DEPARTAMENTO_ID_DEPARTAMENTO": 1 },
+    { "NOMBRE": "Mixco", "CODIGO": 2, "DEPARTAMENTO_ID_DEPARTAMENTO": 1 },
+    { "NOMBRE": "Villa Nueva", "CODIGO": 3, "DEPARTAMENTO_ID_DEPARTAMENTO": 1 },
+    { "NOMBRE": "Escuintla", "CODIGO": 1, "DEPARTAMENTO_ID_DEPARTAMENTO": 3 },
+    { "NOMBRE": "Antigua Guatemala", "CODIGO": 1, "DEPARTAMENTO_ID_DEPARTAMENTO": 2 }
+  ],
+  "CENTRO": [
+    { "NOMBRE": "Centro de Evaluación Zona 12" },
+    { "NOMBRE": "Centro de Evaluación Antigua Guatemala" },
+    { "NOMBRE": "Centro de Evaluación Escuintla" }
+  ],
+  "ESCUELA": [
+    {
+      "NOMBRE": "Escuela de Manejo AutoMaster",
+      "DIRECCION": "Avenida Reforma 15-45, Zona 10",
+      "ACUERDO": "ESC-AM-001"
+    },
+    {
+      "NOMBRE": "Academia Vial GuateDrive",
+      "DIRECCION": "Boulevard Los Próceres 18-20, Zona 10",
+      "ACUERDO": "ESC-GD-002"
+    },
+    {
+      "NOMBRE": "Instituto de Conducción Segura",
+      "DIRECCION": "Calzada Roosevelt 25-30, Zona 11",
+      "ACUERDO": "ESC-ICS-003"
+    }
+  ],
+  "UBICACION": [
+    { "ESCUELA_ID_ESCUELA": 1, "CENTRO_ID_CENTRO": 1 },
+    { "ESCUELA_ID_ESCUELA": 1, "CENTRO_ID_CENTRO": 2 },
+    { "ESCUELA_ID_ESCUELA": 2, "CENTRO_ID_CENTRO": 1 },
+    { "ESCUELA_ID_ESCUELA": 3, "CENTRO_ID_CENTRO": 2 },
+    { "ESCUELA_ID_ESCUELA": 3, "CENTRO_ID_CENTRO": 3 }
+  ],
+  "REGISTRO": [
+    {
+      "UBICACION_ESCUELA_ID_ESCUELA": 1,
+      "UBICACION_CENTRO_ID_CENTRO": 1,
+      "MUNICIPIO_ID_MUNICIPIO": 1,
+      "MUNICIPIO_DEPARTAMENTO_ID_DEPARTAMENTO": 1,
+      "FECHA": "2025-01-15",
+      "TIPO_TRAMITE": "Licencia de Conducir",
+      "TIPO_LICENCIA": "A",
+      "NOMBRE_COMPLETO": "Juan Carlos López García",
+      "GENERO": "M"
+    }
+  ],
+  "CORRELATIVO": [
+    { "FECHA": "2025-01-15", "NO_EXAMEN": 1 },
+    { "FECHA": "2025-01-15", "NO_EXAMEN": 2 }
+  ],
+  "EXAMEN": [
+    {
+      "REGISTRO_ID_ESCUELA": 1,
+      "REGISTRO_ID_CENTRO": 1,
+      "REGISTRO_MUNICIPIO_ID_MUNICIPIO": 1,
+      "REGISTRO_MUNICIPIO_DEPARTAMENTO_ID_DEPARTAMENTO": 1,
+      "REGISTRO_ID_REGISTRO": 1,
+      "CORRELATIVO_ID_CORRELATIVO": 1
+    }
+  ],
+  "PREGUNTAS": [
+    {
+      "PREGUNTA_TEXTO": "¿Cuál es la distancia mínima que debe mantener entre vehículos en carretera?",
+      "RESPUESTA": 2,
+      "RES1": "2 metros",
+      "RES2": "3 segundos de distancia",
+      "RES3": "5 metros",
+      "RES4": "1 segundo de distancia"
+    },
+    {
+      "PREGUNTA_TEXTO": "¿Qué significa una señal de alto?",
+      "RESPUESTA": 2,
+      "RES1": "Reducir velocidad",
+      "RES2": "Detenerse completamente",
+      "RES3": "Ceder el paso",
+      "RES4": "Continuar con precaución"
+    }
+  ],
+  "PREGUNTAS_PRACTICO": [
+    {
+      "PREGUNTA_TEXTO": "Realizar estacionamiento en paralelo en un espacio de 6 metros",
+      "PUNTEO": 20
+    }
+  ],
+  "RESPUESTA_USUARIO": [
+    {
+      "PREGUNTA_ID_PREGUNTA": 1,
+      "EXAMEN_ID_EXAMEN": 1,
+      "RESPUESTA": 2
+    }
+  ],
+  "RESPUESTA_PRACTICO_USUARIO": [
+    {
+      "PREGUNTA_PRACTICO_ID_PREGUNTA_PRACTICO": 1,
+      "EXAMEN_ID_EXAMEN": 1,
+      "NOTA": 18
+    }
+  ]
+}

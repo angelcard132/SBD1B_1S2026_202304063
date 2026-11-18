@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  oracle-db:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: centros_evaluacion_db
+
+    environment:
+      ORACLE_PASSWORD: ${ORACLE_PASSWORD}
+      APP_USER: ${APP_USER}
+      APP_USER_PASSWORD: ${APP_USER_PASSWORD}
+
+    ports:
+      - "1522:1521"
+
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+      - ./db/init.sql:/container-entrypoint-initdb.d/init.sql:ro
+
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+
+  api:
+    build: ./api
+    container_name: centros_evaluacion_api
+
+    environment:
+      DB_HOST: oracle-db
+      DB_PORT: 1521
+      DB_SERVICE: ${DB_SERVICE}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      API_PORT: 3000
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      oracle-db:
+        condition: service_healthy
+
+volumes:
+  oracle_data:
